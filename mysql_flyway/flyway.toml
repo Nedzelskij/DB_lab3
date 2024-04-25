@@ -1,0 +1,32 @@
+databaseType = "MySql"
+id = "534d091b-3f5m-3v4j63v-732dwg63b0p"
+name = "mysql_flyway"
+
+[environments.sample]
+url = "jdbc:mysql://localhost:3306/mysql_lab3_db"
+user = "root"
+password = "3030"
+
+[flyway]
+environment = "sample" 
+locations = ["filesystem:mysql_flyway/migrations"]
+mixed = true
+validateMigrationNaming = true
+baselineOnMigrate = true
+
+[flyway.check]
+majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+schemaModel = "schema-model"
+shadowEnvironment = "shadow"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.mysql]
+schemas = [ "mysql_lab3_db" ]

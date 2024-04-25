@@ -1,0 +1,1 @@
+ALTER TABLE precipitate_informations ADD COLUMN go_outside_by_weather boolean GENERATED ALWAYS AS (humidity < 50.0) STORED;
